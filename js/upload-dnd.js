@@ -56,8 +56,10 @@ function UploadDragAndDrop(dropArea, handleFiles) {
     dropArea.addEventListener(eventName, unhighlight, false)
   });
 
-  // Handle dropped files
+  // Handle drop area events
   dropArea.addEventListener('drop', handleDrop, false);
+  dropArea.addEventListener('click', () => fileInput.click(), false);
+  
   // Handle file input change
-  fileInput.onchange = handleInputChange;
+  fileInput.addEventListener('change', handleInputChange, false);
 }

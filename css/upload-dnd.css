@@ -1,10 +1,26 @@
 #drop-area {
-  border: 2px dashed #ccc;
-  border-radius: 20px;
-  width: 480px;
+  background-color: #329EBB09;
+  border: 2px dashed #329EBB;
+  border-radius: 12px;
+  color: #194A57;
+  cursor: pointer;
+  max-width: 480px;
   margin: 50px auto;
+  opacity: 0.8;
   padding: 20px;
+  text-align: center;
+  width: 100%;
 }
 	#drop-area.highlight {
-	  border-color: purple;
+    background-color: #B1BF5214;
+    border-color: #B1BF52;
+	  color: #535B1F;
 	}
+
+  #drop-area:hover {
+    opacity: 1;
+  }
+
+  #drop-area p {
+    margin-bottom: 24px;
+  }
