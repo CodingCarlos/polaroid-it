@@ -41,10 +41,14 @@
 
   <h1>Polaroid it!</h1>
 
-  <div id="drop-area">
-    <p>Drop your picture here to polaroid-it!</p>
-    <input type="file" accept="image/*">
-  </div>
+  <form class="form" onsubmit="event.preventDefault()">
+    <div id="drop-area">
+      <p>Drop your picture here to polaroid-it!</p>
+      <input type="file" accept="image/*">
+    </div>
+    
+    <button id="download">Download</button>
+  </form>
 
   <!-- This is a preview of the polaroid -->
   <div class="results">

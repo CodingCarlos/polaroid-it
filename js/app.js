@@ -34,6 +34,9 @@ try {
     // Select expected image drop element
     const dropArea = document.getElementById('drop-area');
 
+    // Define download button
+    const download = document.getElementById("download");
+
     // Defining vars here to improve memory allocation
     const pictures = document.querySelectorAll('.polaroid__pic');
     const handles = document.querySelectorAll('.polaroid__handle');
@@ -46,9 +49,7 @@ try {
       // Set image and handle
       pictures.forEach((image) => image.style = `background-image: url(${URL.createObjectURL(file)});`);
       handles.forEach((handle) => handle.innerText = handleName);
-
-      // Download image
-      downloadAsImage(capture, handleName);}
+    }
 
     function handleFileSelected(files) {
       const [file] = files;
@@ -63,6 +64,13 @@ try {
 
     // Setup drag and drop handler
     UploadDragAndDrop(dropArea, handleFileSelected);
+
+    // Setup download handler
+    download.addEventListener('click', () => {
+      // ToDo: Check if there is something to download
+      downloadAsImage(capture, handles[0].innerText);
+    });
+
   })();
 } catch (err) {
   console.warn('Unhandled error detected! Your notaframework catched it, and you can see it below:'); 
