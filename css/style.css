@@ -1,0 +1,34 @@
+body {
+	background-color: #f0f0f0;
+}
+
+/*.results {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}*/
+
+.polaroid {
+	background-color: #fff;
+	box-sizing: border-box;
+	height: 1772px;
+	padding: 118px 59px 216px 59px;
+	position: relative;
+	width: 1181px;
+}
+	.polaroid__pic {
+		background-color: #000;
+		background-size: cover;
+		background-position: center center;
+		height: 100%;
+		width: 100%;
+	}
+	.polaroid__handle {
+		bottom: 58px;
+		font-family: "Comic sans", sans-serif;
+		font-size: 84px;
+		left: 0px;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+	}
