@@ -2,6 +2,13 @@ body {
 	background-color: #f0f0f0;
 }
 
+h1 {
+	font-family: "Caveat", cursive;
+	font-size: 4em;
+	text-align: center;
+	font-weight: bold;
+}
+
 /*.results {
 	display: flex;
 	justify-content: center;
@@ -25,7 +32,7 @@ body {
 	}
 	.polaroid__handle {
 		bottom: 58px;
-		font-family: "Comic sans", sans-serif;
+		font-family: "Caveat", cursive, sans-serif;
 		font-size: 84px;
 		left: 0px;
 		position: absolute;
