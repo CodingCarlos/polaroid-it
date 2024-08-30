@@ -1,8 +1,6 @@
 try {
   (function () {
-  
     // --- Utils ---
-
     function removeExtension(filename) {
       return filename.substring(0, filename.lastIndexOf('.')) || filename;
     }
@@ -34,7 +32,8 @@ try {
     // Select expected image drop element
     const dropArea = document.getElementById('drop-area');
 
-    // Define download button
+    // Define form elements
+    const textInput = document.getElementById("textInput");
     const download = document.getElementById("download");
 
     // Defining vars here to improve memory allocation
@@ -42,18 +41,21 @@ try {
     const handles = document.querySelectorAll('.polaroid__handle');
     const capture = document.getElementById("capture");
 
+    function setHandleTextPreview(text) {
+      handles.forEach((handle) => handle.innerText = text);
+    }
+
     function generatePolaroidFromFile(file) {
       // Prepare handle name
       const handleName = `@${removeExtension(file.name)}`;
 
       // Set image and handle
       pictures.forEach((image) => image.style = `background-image: url(${URL.createObjectURL(file)});`);
-      handles.forEach((handle) => handle.innerText = handleName);
+      setHandleTextPreview(textInput.value || handleName);
     }
 
     function handleFileSelected(files) {
       const [file] = files;
-
       if (!file) {
         console.warn('No file selected');
         return false;
@@ -64,6 +66,10 @@ try {
 
     // Setup drag and drop handler
     UploadDragAndDrop(dropArea, handleFileSelected);
+
+    textInput.addEventListener('input', (event) => {
+      setHandleTextPreview(textInput.value);
+    })
 
     // Setup download handler
     download.addEventListener('click', () => {
