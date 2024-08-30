@@ -1,0 +1,5 @@
+/* A ultra basic css reset */
+
+* {
+	box-sizing: border-box;
+}

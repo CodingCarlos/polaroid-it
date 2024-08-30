@@ -35,8 +35,8 @@ try {
     const dropArea = document.getElementById('drop-area');
 
     // Defining vars here to improve memory allocation
-    const imgOutput = document.getElementById('preview');
-    const handle = document.getElementById('handle');
+    const pictures = document.querySelectorAll('.polaroid__pic');
+    const handles = document.querySelectorAll('.polaroid__handle');
     const capture = document.getElementById("capture");
 
     function generatePolaroidFromFile(file) {
@@ -44,8 +44,8 @@ try {
       const handleName = `@${removeExtension(file.name)}`;
 
       // Set image and handle
-      imgOutput.style = `background-image: url(${URL.createObjectURL(file)});`;
-      handle.innerText = handleName;
+      pictures.forEach((image) => image.style = `background-image: url(${URL.createObjectURL(file)});`);
+      handles.forEach((handle) => handle.innerText = handleName);
 
       // Download image
       downloadAsImage(capture, handleName);}
@@ -61,7 +61,7 @@ try {
       generatePolaroidFromFile(file);
     }
 
-    // Drag and drop handler
+    // Setup drag and drop handler
     UploadDragAndDrop(dropArea, handleFileSelected);
   })();
 } catch (err) {

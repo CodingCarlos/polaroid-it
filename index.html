@@ -13,10 +13,11 @@
 
   <!-- Hack to avoid html2canvas to crash -->
   <style>
-     /* This in a deliberately empty stylesheet */
-      * {}
+      * {} /* This in a deliberately empty stylesheet */
   </style>
   
+  <!-- CSS styles -->
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/upload-dnd.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -44,10 +45,19 @@
     <input type="file" accept="image/*">
   </div>
 
+  <!-- This is a preview of the polaroid -->
   <div class="results">
+    <div class="polaroid">
+      <div class="polaroid__pic" id="preview-pic"></div>
+      <span class="polaroid__handle" id="preview-handle">@gigachad</span>
+    </div>
+  </div>
+
+  <!-- This is the actual downloaded image -->
+  <div class="download-hidden">
     <div class="polaroid" id="capture">
-      <div class="polaroid__pic" id="preview"></div>
-      <span class="polaroid__handle" id="handle">@gigachad</span>
+      <div class="polaroid__pic" id="download-pic"></div>
+      <span class="polaroid__handle" id="download-handle">@gigachad</span>
     </div>
   </div>
   

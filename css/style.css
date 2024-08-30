@@ -9,19 +9,22 @@ h1 {
 	font-weight: bold;
 }
 
-/*.results {
+.results {
+	align-items: center;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-}*/
+	margin: 16px;
+}
 
 .polaroid {
 	background-color: #fff;
 	box-sizing: border-box;
-	height: 1772px;
-	padding: 118px 59px 216px 59px;
+	aspect-ratio: 10 / 15;
+	padding: 10% 5% 20% 5%;
+	max-height: 1772px;
 	position: relative;
-	width: 1181px;
+	max-width: 1181px;
+	width: 100%;
 }
 	.polaroid__pic {
 		background-color: #000;
@@ -31,11 +34,44 @@ h1 {
 		width: 100%;
 	}
 	.polaroid__handle {
-		bottom: 58px;
+		bottom: 4%;
 		font-family: "Caveat", cursive, sans-serif;
-		font-size: 84px;
+		font-size: 8vw;
 		left: 0px;
 		position: absolute;
 		text-align: center;
 		width: 100%;
 	}
+
+/* DOWNLOAD STYLES */
+.download-hidden {
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+}
+
+	/* Here we will use the exact pixel size for a 10x15cm 300dpi image */
+	.download-hidden .polaroid {
+		height: 1772px;
+		width: 1181px;
+		padding: 118px 59px 216px 59px;
+	}
+
+	.download-hidden .polaroid__handle {
+		bottom: 58px;
+		font-size: 84px;
+	}
+
+/* Media queries */
+@media screen and (width > 1181px) {
+	.polaroid {
+		height: 1772px;
+		width: 1181px;
+		padding: 118px 59px 216px 59px;
+	}
+
+	.polaroid__handle {
+		bottom: 58px;
+		font-size: 84px;
+	}
+}
